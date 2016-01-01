@@ -14,7 +14,7 @@ Nathan Riemer's personal github site. Will list projects.
 - [ ] Brief bio
 
 ### Layout and Styling
-- [ ] Determine layout
+- [x] Determine layout
 - [ ] Style
 
 ### Javascript
