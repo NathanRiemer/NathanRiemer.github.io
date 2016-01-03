@@ -21,6 +21,19 @@ $(document).ready(function() {
   };
 
   projects.forEach(addProject);
+
+  uniqueTechnologies.forEach(function(tech){
+    var $techLink = $('<li>');
+    $techLink.text(tech);
+    $techLink.appendTo($('ul.technology-links'));
+  });
+
+
+  var filterProjects = function(tech) {
+    $('#projects .container').children().show();
+    $('.project').not(':contains(' + tech + ')').hide();
+  };
+
 });
 
 
@@ -44,7 +57,7 @@ var projects = [
     url: "https://persephone-admissions.herokuapp.com/",
     image: "images/admissions.png",
     description: "Developed with a small team. Prospective students, admissions officers, and instructors can log in and submit/review applications, edit interview questionnaires, and conduct interviews. Appropriate actions trigger application status updates and emails to relevant parties.",
-    technologies: ["HTML", "CSS", "JavaScript", "Rails", "AJAX"]
+    technologies: ["HTML", "CSS", "JavaScript", "Ruby", "Rails", "AJAX"]
   },
   {
     title: "Wiki (Rails)",
@@ -61,3 +74,15 @@ var projects = [
     technologies: ["HTML", "CSS", "JavaScript"]
   }
 ];
+
+var uniqueTechnologies = projects.map(function(project) {
+  return project.technologies;
+}).reduce(function(a, b) {
+  return a.concat(b);
+}).filter(function(item, index, array) {
+  return array.indexOf(item) === index;
+});
+
+
+
+
