@@ -23,16 +23,23 @@ $(document).ready(function() {
   projects.forEach(addProject);
 
   uniqueTechnologies.forEach(function(tech){
-    var $techLink = $('<li>');
-    $techLink.text(tech);
-    $techLink.appendTo($('ul.technology-links'));
+    var $techButton = $('<li><button>'+ tech + '</button></li>');
+    // $techButton.text(tech);
+    $techButton.appendTo($('ul.technology-filter'));
   });
 
 
   var filterProjects = function(tech) {
     $('#projects .container').children().show();
-    $('.project').not(':contains(' + tech + ')').hide();
+    if(tech !== "All") {
+      $('.project').not(':contains(' + tech + ')').hide();
+    }
   };
+
+  $('.technology-filter button').click(function(event) {
+    filterProjects($(event.target).text());
+  });
+
 
 });
 
