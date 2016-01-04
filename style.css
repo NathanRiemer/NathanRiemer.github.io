@@ -6,6 +6,9 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  background-color: gray;
+  z-index: 1000;
 }
 
 li {
@@ -22,6 +25,8 @@ li {
   flex-wrap: wrap;
   width: 95%;
   margin: 0 auto;
+  justify-content: space-around;
+
 }
 
 .project {
@@ -29,7 +34,8 @@ li {
   background-color: skyblue;
   min-height: 150px;
   border: 1px solid black;
-  width: 50%;
+  width: 48%;
+  margin-bottom: 10px;
   /*text-align: center;*/
 }
 
@@ -55,4 +61,10 @@ li {
 .project li {
   box-sizing: border-box;
   width: 33%;
+}
+
+ul.technology-filter {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
 }

@@ -24,7 +24,6 @@ $(document).ready(function() {
 
   uniqueTechnologies.forEach(function(tech){
     var $techButton = $('<li><button>'+ tech + '</button></li>');
-    // $techButton.text(tech);
     $techButton.appendTo($('ul.technology-filter'));
   });
 
@@ -38,6 +37,8 @@ $(document).ready(function() {
 
   $('.technology-filter button').click(function(event) {
     filterProjects($(event.target).text());
+    $('.technology-filter button').css('background-color', 'white');
+    $(event.target).css('background-color', 'yellow');
   });
 
 
@@ -50,21 +51,21 @@ var projects = [
     url: "http://nathanriemer.github.io/concentration/",
     image: "images/concentrate.png",
     description: "The classic memory/concentration game. Choose from multiple image sets and difficulty levels.",
-    technologies: ["HTML", "CSS", "JavaScript"]
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery"]
   },
   {
     title: "Wiki (Sinatra)",
     url: "https://wiki-sw-v1.herokuapp.com/",
     image: "images/wiki_v1.png",
     description: "A Star Wars wiki implemented in Ruby with Sinatra. Sign up/log in, view and edit articles and categories, and view, comment on, and diff past revisions.",
-    technologies: ["HTML", "CSS", "JavaScript", "Ruby", "Sinatra"]
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Sinatra"]
   },
   {
     title: "GA Admissions Portal",
     url: "https://persephone-admissions.herokuapp.com/",
     image: "images/admissions.png",
     description: "Developed with a small team. Prospective students, admissions officers, and instructors can log in and submit/review applications, edit interview questionnaires, and conduct interviews. Appropriate actions trigger application status updates and emails to relevant parties.",
-    technologies: ["HTML", "CSS", "JavaScript", "Ruby", "Rails", "AJAX"]
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Rails", "AJAX"]
   },
   {
     title: "Wiki (Rails)",
